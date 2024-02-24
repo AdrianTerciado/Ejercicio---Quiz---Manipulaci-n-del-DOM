@@ -13,7 +13,7 @@
 }
 
 main {
-    background-color: var(--celeste);
+    background-color: var(--columbiaBlue);
 }
 
 header {
@@ -34,12 +34,12 @@ section {
 fieldset {
     width: 95%;
     border-radius: 20px;
-    background-color: var(--columbiaBlue);
+    background-color: var(--wisteria);
     margin: 15px auto;
 }
 
 article {
-    background-color: var(--wisteria);
+    background-color: var(--amethyst);
     border-radius: 20px;
     padding: 3px;
     margin: 5px auto;
