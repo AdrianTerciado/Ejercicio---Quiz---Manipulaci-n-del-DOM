@@ -2,6 +2,7 @@
     font-family: "Anta", sans-serif;
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 :root {
@@ -12,50 +13,101 @@
     --celeste: #B9FAF8;
 }
 
-main {
-    background-color: var(--columbiaBlue);
-}
-
 header {
     background-color: #6F2DBD;
     text-align: center;
     padding: 10px;
 }
 
-form {
-    display: flex;
-    justify-content: center;
+main {
+    text-align: center;
 }
 
-section {
-    text-align: center;
+form {
+    background-color: var(--grape);
 }
 
 fieldset {
-    width: 95%;
-    border-radius: 20px;
-    background-color: var(--wisteria);
-    margin: 15px auto;
-}
-
-article {
-    background-color: var(--amethyst);
-    border-radius: 20px;
-    padding: 3px;
-    margin: 5px auto;
+    width: 100%;
+    height: 100vh;
+    margin: 0px auto 10px;
     display: flex;
     flex-direction: column;
+    border: 1px solid black;
+}
+
+label {
+    height: 25%;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-div{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+fieldset input{
+   display: none;
 }
 
-footer {
-    background-color: #6F2DBD;
-    text-align: center;
-    padding: 10px;
+legend {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option1 {
+    background-color: var(--celeste);
+}
+
+.option2 {
+    background-color: var(--columbiaBlue);
+}
+
+.option3 {
+    background-color: var(--wisteria);
+}
+
+.option4 {
+    background-color: var(--amethyst);
+}
+
+.envio, .reset{
+    width: 50%;
+    margin: 5px auto;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 700px) {
+    fieldset {
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    legend {
+        height: 40%;
+    }
+
+    label {
+        width: 40%;
+        height: 40%;
+        margin: 0 20px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    label {
+
+
+    }
 }

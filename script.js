@@ -1,18 +1,48 @@
+/* Pintar el borde del label seleccionado para quitar el circulito del input creando un array de labels para darles la propiedad */
+
+function seleccionRespuestas(pregunta) {
+    let labels = document.querySelectorAll(`.${pregunta} label`);
+
+    /* Damos a los labels la propiedad de escuchar ante un click */
+    for (let i = 0; i < labels.length; i++) {
+
+        labels[i].addEventListener("click", function () {
+            // A cada click borro todas
+            for (let j = 0; j < labels.length; j++) {
+                labels[j].style.border = "none";
+            }
+            // Y marco sólo la seleccionada
+            labels[i].style.border = "3px solid blue";
+        });
+    }
+}
+
+/* Cambiar fondo segun resultado */
+//Primero guardamos los fondos originales
+/* let fondos = document.querySelectorAll("label").style.backgroundColor;
+let backgroundsOriginales = [];
+
+for (let i = 0; i < fondos.length; i++) {
+    backgroundsOriginales[i] = fondos[i];   
+} */
+
+seleccionRespuestas("question1");
+seleccionRespuestas("question2");
+seleccionRespuestas("question3");
+seleccionRespuestas("question4");
+seleccionRespuestas("question5");
+seleccionRespuestas("question6");
+seleccionRespuestas("question7");
+seleccionRespuestas("question8");
+seleccionRespuestas("question9");
+seleccionRespuestas("question10");
+
+/* Hasta aquí */
+
 document.querySelector("form").addEventListener("submit", function (event) {
     event.preventDefault();
 
-    // console.log(event.target.elements);
-
-    console.log(event.target.question1.value);
-    console.log(event.target.question2.value);
-    console.log(event.target.question3.value);
-    console.log(event.target.question4.value);
-    console.log(event.target.question5.value);
-    console.log(event.target.question6.value);
-    console.log(event.target.question7.value);
-    console.log(event.target.question8.value);
-    console.log(event.target.question9.value);
-    console.log(event.target.question10.value);
+    console.log(event.target.elements);
 
     const question1 = event.target.question1.value;
     const question2 = event.target.question2.value;
@@ -25,84 +55,85 @@ document.querySelector("form").addEventListener("submit", function (event) {
     const question9 = event.target.question9.value;
     const question10 = event.target.question10.value;
 
+
+    /* Validación */
     let acertadas = 0;
+
 
     if (question1 == "kalel") {
         acertadas += 1;
+        document.querySelector("#labelKalel").style.backgroundColor = "green";
+        // Si selecciono respuesta buena pero luego la cambio se congela el quiz. Una vez le has dado a enviar, no puedes modificar respuestas que ya hayas seleccionado.
     }
 
     if (question2 == "pueblo_paleta") {
         acertadas += 1;
+        document.querySelector("#labelPueblo_paleta").style.backgroundColor = "green";
+        //Este no lo pinta, no sé por qué
     }
 
     if (question3 == "dard_vader") {
         acertadas += 1;
+        document.querySelector("#labelDard_vader").style.backgroundColor = "green";
     }
 
     if (question4 == "vegeta") {
         acertadas += 1;
+        document.querySelector("#labelVegeta").style.backgroundColor = "green";
     }
 
     if (question5 == "derrick") {
         acertadas += 1;
+        document.querySelector("#labelDerrick").style.backgroundColor = "green";
     }
 
     if (question6 == "tony_stark") {
         acertadas += 1;
+        document.querySelector("#labelTony_stark").style.backgroundColor = "green";
     }
 
     if (question7 == "pegaso") {
         acertadas += 1;
+        document.querySelector("#labelPegaso").style.backgroundColor = "green";
     }
 
     if (question8 == "luffy") {
         acertadas += 1;
+        document.querySelector("#labelLuffy").style.backgroundColor = "green";
     }
 
     if (question9 == "bolsillo_magico") {
         acertadas += 1;
+        document.querySelector("#labelBolsillo_magico").style.backgroundColor = "green";
     }
 
     if (question10 == "simulacion") {
         acertadas += 1;
+        document.querySelector("#labelSimulacion").style.backgroundColor = "green";
     }
 
     let mensaje = `Y tu resultado es... ¡${acertadas} de 10!`;
 
     if (question1 == "" || question2 == "" || question3 == "" || question4 == "" || question5 == "" || question6 == "" || question7 == "" || question8 == "" || question9 == "" || question10 == "") {
 
-        let span = document.createElement("span");
-        let mensajeError = document.createTextNode("Te faltan preguntas por contestar\n");
-        span.appendChild(mensajeError);
+        /*Limpio mensaje de error si lo hubiera */
+        document.getElementById("error").innerHTML = "";
+
+        /* Escribo mensaje nuevo */
+        let mensajeError = document.createTextNode("Tienes preguntas sin contestar\n");
+        document.getElementById("error").appendChild(mensajeError);
         document.getElementById("error").style.border = "1px solid black";
         document.getElementById("error").style.borderRadius = "10px";
         document.getElementById("error").style.background = "#B9FAF8";
         document.getElementById("error").style.color = "red";
-
-        document.querySelector("p").appendChild(span);
     }
     else {
         alert(mensaje);
         event.target.submit();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
 
-/**
- * 
+/*
 1
 : 
 input#clark
@@ -223,5 +254,4 @@ input#agujero_negro
 40
 : 
 input#mordor
-
- */
+*/

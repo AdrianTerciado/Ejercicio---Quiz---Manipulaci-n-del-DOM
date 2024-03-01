@@ -1,8 +1,9 @@
 # Ejercicio---Quiz---Manipulaci-n-del-DOM
 
-1. Estructura en HTML, type="radio"
-2. Dar estilo en CSS
-3. He incluído boton submit al final del formulario, no lo había hecho.
-3. Validar formulario en Javascript
-4. Retoques, falta que el mensaje de error no se reescriba
-5. GitHub pages: https://adrianterciado.github.io/Ejercicio---Quiz---Manipulaci-n-del-DOM/
+* He creado un quiz de 10 preguntas de peliculas y anime.
+
+* Cuando seleccionas una respuesta, se marca con un borde azul.
+
+* Si le das a enviar para resolver el quiz y te faltan preguntas por contestar, te pinta un aviso. No se quitará mientras te falten preguntas por contestar.
+
+* Cuando finalmente has contestado a todas las preguntas, un alert te informa de tu resultado y se envía el formulario.
