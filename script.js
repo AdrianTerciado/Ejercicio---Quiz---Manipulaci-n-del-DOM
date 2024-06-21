@@ -17,15 +17,6 @@ function seleccionRespuestas(pregunta) {
     }
 }
 
-/* Cambiar fondo segun resultado */
-//Primero guardamos los fondos originales
-/* let fondos = document.querySelectorAll("label").style.backgroundColor;
-let backgroundsOriginales = [];
-
-for (let i = 0; i < fondos.length; i++) {
-    backgroundsOriginales[i] = fondos[i];   
-} */
-
 seleccionRespuestas("question1");
 seleccionRespuestas("question2");
 seleccionRespuestas("question3");
@@ -36,6 +27,15 @@ seleccionRespuestas("question7");
 seleccionRespuestas("question8");
 seleccionRespuestas("question9");
 seleccionRespuestas("question10");
+
+/* Cambiar fondo segun resultado */
+//Primero guardamos los fondos originales
+/* let fondos = document.querySelectorAll("label").style.backgroundColor;
+let backgroundsOriginales = [];
+
+for (let i = 0; i < fondos.length; i++) {
+    backgroundsOriginales[i] = fondos[i];   
+} */
 
 /* Hasta aquí */
 
@@ -56,20 +56,17 @@ document.querySelector("form").addEventListener("submit", function (event) {
     const question10 = event.target.question10.value;
 
 
-    /* Validación */
+    /* Validación, mejorar con bucle for */
     let acertadas = 0;
-
 
     if (question1 == "kalel") {
         acertadas += 1;
         document.querySelector("#labelKalel").style.backgroundColor = "green";
-        // Si selecciono respuesta buena pero luego la cambio se congela el quiz. Una vez le has dado a enviar, no puedes modificar respuestas que ya hayas seleccionado.
     }
 
     if (question2 == "pueblo_paleta") {
         acertadas += 1;
         document.querySelector("#labelPueblo_paleta").style.backgroundColor = "green";
-        //Este no lo pinta, no sé por qué
     }
 
     if (question3 == "dard_vader") {
